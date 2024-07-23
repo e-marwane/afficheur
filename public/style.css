@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    z-index: 1;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0 !important;
+    padding: 0;
+    height: 100vh !important;
+    overflow: hidden;
+}
+
+#builder {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#sidebar {
+    width: 300px;
+    padding: 20px 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin-right: 20px;
+    height: 100vh;
+    overflow: scroll;
+}
+
+#sidebar h3 {
+    text-align: center;
+}
+
+#sidebar .element-button, .template-button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#editor {
+    /* flex-grow: 0; */
+    min-width: 400px;
+    min-height: 700px;
+    /* padding: 10px; */
+    border: 1px solid #ccc;
+    background-color: #fff;
+    position: relative;
+}
+
+#export-html {
+    display: block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 2%;
+    z-index: 9999999999999999 !important;
+    right: 46%;
+}
+
+#text-settings {
+    width: 300px;
+    margin-left: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+#text-settings label {
+    display: block;
+    margin-top: 10px;
+}
+
+#text-settings input, #text-settings select {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.selected-element {
+    /* outline: 2px dashed red; */
+}
+
+
+@media (max-width: 768px) {
+    #builder {
+        flex-direction: column;
+    }
+    #sidebar {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    #editor, #text-settings {
+        width: 100%;
+    }
+}
+.container{
+    width: 100% !important;
+    height: 100vh !important;
+}
+.media-editeur {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media screen and (min-width: 200) and (max-width: 600px) {
+    /* Ajoutez ici les styles spécifiques aux petits écrans */
+    .container{
+        width: 100% !important;
+        height: 100vh !important;
+    }
+    /* Autres styles spécifiques aux petits écrans */
+}
+/* .ui-wrapper {
+    all: unset;
+    resize: both;
+}
+
+.ui-wrapper.ui-draggable.ui-draggable-handle.ui-resizable img {
+    width: 100px !important;
+    height: 100px !important;
+    max-width: unset !important;
+} */
+div#editor > img {
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain;
+    resize: both !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    display: block !important;
+}
+
+
+.shape-element {
+    z-index: 0 !important;
+}
+
+#delete-element {
+    display: block;
+    padding: 10px 20px;
+    background-color: #a9a9a9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    width: 100%;
+    font-weight: 900;
+}
+
+
+.container > img {
+    width: auto !important;
+    height: auto !important;
+}

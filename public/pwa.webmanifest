@@ -1,0 +1,17 @@
+{
+    "name": "MyAcios",
+    "short_name": "MyAcios",
+    "description": "MyAcios",
+    "icons": [
+      {
+        "src": "./img/acios.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/appmobile",
+    "display": "fullscreen",
+    "display_override": ["window-controls-overlay"],
+    "theme_color": "#2F303A",
+    "background_color": "#2F303A"
+  }

@@ -1,0 +1,19 @@
+version: '3.4'
+
+services:
+  afficheur:
+    container_name: afficheur
+    build:
+      context: .
+    restart: always
+    ports:
+      - "9020:9020"
+    env_file:
+      - /root/docker-env
+    networks:
+      - edutice
+
+networks:
+  edutice:
+    external: true
+
