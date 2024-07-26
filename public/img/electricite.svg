@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="90" height="71" viewBox="0 0 119.181 93.508">
+  <g id="Groupe_11113" data-name="Groupe 11113" transform="translate(-252.186 -670.095)">
+    <g id="Type_Climate_Sensor_Progress_InProgress_Size_Small" data-name="Type=Climate Sensor, Progress=InProgress, Size=Small" transform="translate(252.186 670.095)">
+      <ellipse id="Ellipse_3710" data-name="Ellipse 3710" cx="7.192" cy="7.192" rx="7.192" ry="7.192" transform="translate(53.426)" fill="#fff"/>
+      <g id="Groupe_10978" data-name="Groupe 10978" transform="translate(0 0.556)">
+        <path id="Tracé_51660" data-name="Tracé 51660" d="M70,13.205A11.309,11.309,0,0,0,70.021.634a59.592,59.592,0,0,1,40.49,89.625,6.165,6.165,0,0,1-10.535-6.4A47.262,47.262,0,0,0,70,13.205Zm-19.01-.373a47.262,47.262,0,0,0-32.9,69.093,6.165,6.165,0,0,1-10.825,5.9A59.591,59.591,0,0,1,51.468.271a11.309,11.309,0,0,0-.476,12.562Z" transform="translate(0 -0.271)" fill="#30cb32" fill-rule="evenodd"/>
+      </g>
+    </g>
+    <g id="Groupe_10492" data-name="Groupe 10492" transform="translate(289 700.882)">
+      <path id="brancher" d="M45.291,14.764H34.745V2.109a2.109,2.109,0,1,0-4.218,0V14.764H17.873V2.109a2.109,2.109,0,1,0-4.218,0V14.764H3.109a2.109,2.109,0,0,0,0,4.218H5.218v6.327A19,19,0,0,0,22.091,44.167v4.343a2.109,2.109,0,1,0,4.218,0V44.167A19.006,19.006,0,0,0,43.182,25.309V18.982h2.109a2.109,2.109,0,0,0,0-4.218Z" transform="translate(-1 0)" fill="#31cb31"/>
+      <path id="orage" d="M41.77,52.027l-6.2,9.314H34.095l1.729-6.132H32.05a1.132,1.132,0,0,1-1.083-1.46L34.23,44.17H39.5L37.095,50.3h3.749a1.111,1.111,0,0,1,.926,1.724Z" transform="translate(-13.236 -21.646)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

@@ -5,77 +5,159 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Affichage dynamique</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/cropperjs/dist/cropper.css" rel="stylesheet"/>
+    <script src="https://unpkg.com/cropperjs/dist/cropper.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs@latest/dist/interact.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 <body>
+    <div id="crop-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span id="close-crop-modal" class="close">&times;</span>
+            <div class="crop-container">
+                <img id="crop-image" src="" alt="Image to crop">
+            </div>
+            <button id="crop-button">Crop</button>
+        </div>
+    </div>
+    
     <div id="builder">
         <div id="sidebar">
-            <h3>Nos données</h3>
-            <button class="element-button" data-element="MeteoTemp">MeteoTemp</button>
-            <button class="element-button" data-element="MeteoTempMax">MeteoTempMax</button>
-            <button class="element-button" data-element="MeteoTempMin">MeteoTempMin</button>
-            <button class="element-button" data-element="MeteoHum">MeteoHum</button>
-            <button class="element-button" data-element="BatimentCo2">BatimentCo2</button>
-            <button class="element-button" data-element="BatimentBattery">BatimentBattery</button>
-            <button class="element-button" data-element="BatimentHum">BatimentHum</button>
-            <button class="element-button" data-element="BatimentTemp">BatimentTemp</button>
-            <h3>Elements</h3>
-            <button class="element-button" data-element="h1">Titre h1</button>
-            <button class="element-button" data-element="h2">Titre h2</button>
-            <button class="element-button" data-element="h3">Titre h3</button>
-            <button class="element-button" data-element="h4">Titre h4</button>
-            <button class="element-button" data-element="h5">Titre h5</button>
-            <button class="element-button" data-element="p">Paragraphe</button>
-            <!-- <h3>Text Decorations</h3>
-            <button class="element-button" data-element="overline">Text Overline</button>
-            <button class="element-button" data-element="underline">Text Underline</button>
-            <button class="element-button" data-element="line-through">Text Line through</button>
-            <button class="element-button" data-element="bold">Text Bold</button>
-            <button class="element-button" data-element="italic">Text Italic</button> -->
-            <h3>Formes</h3>
-            <button class="element-button" data-element="rectangle">Rectangle</button>
-            <button class="element-button" data-element="circle">Circle</button>
-            <h3>Taille du modèle</h3>
-            <button class="template-button" data-template="desktop">Desktop</button>
-            <button class="template-button" data-template="mobile">Mobile</button>
-            <h3>Media</h3>
-            <button id="add-image" class="template-button">Ajouter Image</button>
-            <input type="file" id="image-input" style="display:none;">
-            <div class="media-editeur">
-                <label for="editor-bg">Background:</label>
-                <input type="color" id="editor-bg">
+            <h3 class="drop-down-menu">Taille du modèle</h3>
+            <div class="drop-down-content">
+                <button class="template-button" data-template="desktop">Desktop</button>
+                <button class="template-button" data-template="mobile">Mobile</button>
+                <div class="resizing">
+                    <label for="custom-width">Largeur personnalisée (px):</label>
+                    <input type="number" id="custom-width" min="100" placeholder="Largeur (en pixels)" />
+                    <label for="custom-height">Hauteur personnalisée (px):</label>
+                    <input type="number" id="custom-height" min="100" placeholder="Hauteur (en pixels)" />
+                </div>
+                <button class="template-button" id="apply-dimensions">Appliquer les dimensions</button>
+            </div>
+            <h3 class="drop-down-menu">Elements</h3>
+            <div class="drop-down-content">
+                <button class="element-button" data-element="h1">Titre h1</button>
+                <button class="element-button" data-element="h2">Titre h2</button>
+                <button class="element-button" data-element="h3">Titre h3</button>
+                <button class="element-button" data-element="h4">Titre h4</button>
+                <button class="element-button" data-element="h5">Titre h5</button>
+                <button class="element-button" data-element="p">Paragraphe</button>
+            </div>
+            <h3 class="drop-down-menu">Media</h3>
+            <div class="drop-down-content">
+                <button id="add-image" class="template-button">Ajouter Image</button>
+                <input type="file" id="image-input" style="display:none;">
+                <div class="media-editeur">
+                    <label for="editor-bg">Background:</label>
+                    <input type="color" id="editor-bg">
+                </div>
+            </div>
+            <h3 class="drop-down-menu">Nos données</h3>
+            <div class="drop-down-content">
+                <button class="element-button" data-element="MeteoTemp">MeteoTemp</button>
+                <button class="element-button" data-element="MeteoTempMax">MeteoTempMax</button>
+                <button class="element-button" data-element="MeteoTempMin">MeteoTempMin</button>
+                <button class="element-button" data-element="MeteoHum">MeteoHum</button>
+                <button class="element-button" data-element="BatimentCo2">BatimentCo2</button>
+                <button class="element-button" data-element="BatimentBattery">BatimentBattery</button>
+                <button class="element-button" data-element="BatimentHum">BatimentHum</button>
+                <button class="element-button" data-element="BatimentTemp">BatimentTemp</button>
+            </div>
+            <h3 class="drop-down-menu">Graphique</h3>
+            <div class="drop-down-content">
+                <input type="text" id="icon-search" placeholder="Rechercher des icônes...">
+                <button id="search-icons"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div id="icon-results" style="display: flex; flex-wrap: wrap;"></div>
+            </div>
+            <h3 class="drop-down-menu">Images</h3>
+            <div class="drop-down-content">
+                <input type="text" id="image-search" placeholder="Rechercher des images...">
+                <button id="search-images"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <div id="image-results"></div>
             </div>
         </div>
         <div id="editor"></div>
+        <div class="axis-guide x" id="x-axis-guide"></div>
+        <div class="axis-guide y" id="y-axis-guide"></div>
         <div id="text-settings">
+            <div class="retour-next">
+                <button id="undo-button"><i class="fa-solid fa-rotate-left"></i></button>
+                <button id="redo-button"><i class="fa-solid fa-rotate-right"></i></button>
+            </div>
             <h3>Paramètres de texte</h3>
-            <label for="text-color">Color:</label>
-            <input type="color" id="text-color">
-            <label for="text-size">Taille:</label>
-            <input type="number" id="text-size" min="1">
-            <label for="text-font">Font:</label>
-            <select id="text-font">
-                <option value="Arial">Arial</option>
-                <option value="Times New Roman">Times New Roman</option>
-                <option value="Courier New">Courier New</option>
-                <option value="Georgia">Georgia</option>
-            </select>
+            <div class="resizing">
+                <label for="text-color">Couleur:</label>
+                <input type="color" id="text-color">
+                <label for="text-size">Taille:</label>
+                <input type="number" id="text-size" min="1">
+                <label for="text-font">Font:</label>
+                <select id="text-font">
+                    <option value="Arial">Arial</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                    <option value="Courier New">Courier New</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="ProTextMedium">ProTextMedium</option>
+                    <option value="Rubik">Rubik</option>
+                </select>
+            </div>
             <button id="text-bold">Bold</button>
             <button id="text-italic">Italic</button>
             <button id="text-underline">Underline</button>
             <h3>Paramètres de forme</h3>
-            <label for="shape-color">Background Color:</label>
-            <input type="color" id="shape-color">
-            <label for="shape-width">Width:</label>
-            <input type="number" id="shape-width" min="1">
-            <label for="shape-height">Height:</label>
-            <input type="number" id="shape-height" min="1">
+            <div class="resizing">
+                <label for="shape-color">Background Couleur:</label>
+                <input type="color" id="shape-color">
+                <label for="shape-width">Width:</label>
+                <input type="number" id="shape-width" min="1">
+                <label for="shape-height">Height:</label>
+                <input type="number" id="shape-height" min="1"> 
+            </div>
+            
             <button id="delete-element">Supprimer l'élément</button>
         </div>
     </div>
     <button id="export-html">Export HTML</button>
     <script type="module" src="./canva-script.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.drop-down-menu').click(function() {
+                // Check if the clicked h3's content is currently visible
+                const content = $(this).next('.drop-down-content');
+                if (content.is(':visible')) {
+                    content.slideUp();
+                } else {
+                    // Hide all other drop-down contents
+                    $('.drop-down-content').slideUp();
+                    // Show the clicked h3's content
+                    content.slideDown();
+                }
+            });
+        });
+
+        function saveState() {
+            console.log('State saved');
+        }
+
+        $('#apply-dimensions').click(function() {
+            const width = $('#custom-width').val();
+            const height = $('#custom-height').val();
+
+            // Vérifier si les valeurs sont des nombres positifs
+            if (width && height && !isNaN(width) && !isNaN(height) && width > 0 && height > 0) {
+                $('#editor').css({
+                    'min-width': width + 'px',
+                    'min-height': height + 'px'
+                });
+                saveState(); // Sauvegarde l'état après modification des dimensions
+            } else {
+                alert('Veuillez entrer des dimensions valides (nombres positifs).');
+            }
+        });
+    </script>
     <!-- <script type="module" src="./main.js"></script> -->
 </body>
 </html>

@@ -1,0 +1,28 @@
+<svg id="Groupe_11076" data-name="Groupe 11076" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="39" height="39" viewBox="0 0 39 39">
+  <defs>
+    <clipPath id="clip-path">
+      <path id="Tracé_51742" data-name="Tracé 51742" d="M32.073,28.367l3.619,2.091,1.393-2.414-3.62-2.089ZM0,20.893H4.179V18.106H0Zm34.821,0H39V18.106H34.821Zm-32.9-9.937,3.617,2.089,1.393-2.412L3.309,8.545Zm30.157-.323,1.391,2.412,3.62-2.089L35.691,8.545ZM6.964,19.5a12.636,12.636,0,0,0,.155,1.974,10.373,10.373,0,0,1,2.649-1.386c-.013-.2-.018-.391-.018-.588a9.75,9.75,0,1,1,16.174,7.333,6.953,6.953,0,0,1,2.486,1.483A12.535,12.535,0,1,0,6.964,19.5M8.544,3.309l2.089,3.617,2.412-1.391L10.956,1.917ZM25.955,5.535l2.412,1.391,2.089-3.617L28.044,1.917ZM18.107,4.179h2.787V0H18.107Z" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" y1="1.28" x2="0.036" y2="1.28" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#efc977"/>
+      <stop offset="1" stop-color="#e07256"/>
+    </linearGradient>
+    <clipPath id="clip-path-2">
+      <path id="Tracé_51743" data-name="Tracé 51743" d="M2,23.446A10.447,10.447,0,0,0,12.446,33.893H22.893a6.964,6.964,0,1,0-1.6-13.743h-.007l-.084.019-.018.006-.04.01-.039.01-.045.013-.049.014-.024.006-.068.021-.018,0-.074.024-.082.025h0a6.806,6.806,0,0,0-.805.318h0l-.075.036-.006,0-.06.029-.021.011c-.018.008-.036.017-.053.026l-.039.02-.008.006-.04.021a7.651,7.651,0,0,1,.479,2.673c0,.124,0,.248-.008.371a4.178,4.178,0,1,1,2.788,7.29H12.446a7.661,7.661,0,1,1,7.182-10.332l.046-.022.008-.006.039-.02c.017-.01.035-.018.053-.026l.021-.011.06-.029.006,0,.075-.036h0a6.713,6.713,0,0,1,.805-.318h0l.082-.025.074-.024.018,0,.068-.021.024-.006.049-.014L21.1,20.2l.039-.01.04-.01.018-.006.084-.019h.007a6.95,6.95,0,0,1,1.015-.162A10.449,10.449,0,0,0,2,23.446" transform="translate(-2 -13)" fill="none"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-2" x1="-0.1" y1="1" x2="-0.05" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#b2d4f7"/>
+      <stop offset="1" stop-color="#d9e2f3"/>
+    </linearGradient>
+  </defs>
+  <g id="Groupe_11070" data-name="Groupe 11070">
+    <g id="Groupe_11069" data-name="Groupe 11069" clip-path="url(#clip-path)">
+      <rect id="Rectangle_13200" data-name="Rectangle 13200" width="39" height="30.458" transform="translate(0 0)" fill="url(#linear-gradient)"/>
+    </g>
+  </g>
+  <g id="Groupe_11072" data-name="Groupe 11072" transform="translate(2.786 18.107)">
+    <g id="Groupe_11071" data-name="Groupe 11071" clip-path="url(#clip-path-2)">
+      <rect id="Rectangle_13201" data-name="Rectangle 13201" width="28" height="21" transform="translate(0.214 -0.108)" fill="url(#linear-gradient-2)"/>
+    </g>
+  </g>
+</svg>

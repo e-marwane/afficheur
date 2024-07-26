@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="124.295" height="123.987" viewBox="0 0 124.295 123.987">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_10810" data-name="Rectangle 10810" width="124.295" height="123.987" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect id="Rectangle_10808" data-name="Rectangle 10808" width="124.295" height="123.805" fill="none"/>
+    </clipPath>
+    <clipPath id="clip-path-3">
+      <rect id="Rectangle_10809" data-name="Rectangle 10809" width="54.316" height="33.761" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="Groupe_8482" data-name="Groupe 8482" transform="translate(0 0)">
+    <g id="Groupe_de_masques_8473" data-name="Groupe de masques 8473" transform="translate(0 0)" clip-path="url(#clip-path)">
+      <g id="Groupe_8469" data-name="Groupe 8469" transform="translate(0 0.182)" style="isolation: isolate">
+        <g id="Groupe_8468" data-name="Groupe 8468">
+          <g id="Groupe_8467" data-name="Groupe 8467" clip-path="url(#clip-path-2)">
+            <path id="Tracé_48479" data-name="Tracé 48479" d="M113.121,34.668A58.772,58.772,0,1,1,52.139,1.053" transform="translate(2.382 2.328)" fill="none" stroke="#D84937" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+          </g>
+        </g>
+      </g>
+      <g id="Groupe_8472" data-name="Groupe 8472" transform="translate(59.563 0.001)" style="isolation: isolate">
+        <g id="Groupe_8471" data-name="Groupe 8471" transform="translate(0 0)">
+          <g id="Groupe_8470" data-name="Groupe 8470" clip-path="url(#clip-path-3)">
+            <path id="Tracé_48480" data-name="Tracé 48480" d="M18.61,1A58.726,58.726,0,0,1,66.16,28" transform="translate(-15.226 2.382)" fill="none" stroke="#6b6b6b" stroke-linecap="round" stroke-miterlimit="10" stroke-width="5"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

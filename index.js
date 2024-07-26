@@ -8,10 +8,29 @@ const sensorRoutes = require('./routes/sensors'); // Adjust the path accordingly
 const crypto = require('crypto');
 const session = require('express-session');
 const fs = require('fs');
+const request = require('request');
+const translate = require('@vitalets/google-translate-api'); // Import the translation library
 
 
 const app = express();
+app.use(express.json());
+app.get('/ApiAfficheurdynimac/icons', (req, res) => {
+  const apiKey = 'FaYYhsG0fn9PKZf4eUCgzCWi117IziHWKA1nBWuZ0xDOzVGuTVu34cGlYqyBUW01';
+  const query = req.query.q || ''; // Use the query parameter or default to empty string
+  const limit = req.query.limit || 100; // Default limit
+  const offset = req.query.offset || 0; // Default offset
 
+  const url = `https://api.iconfinder.com/v4/icons/search?query=${encodeURIComponent(query)}&limit=${limit}&offset=${offset}`;
+
+  request.get(url, {
+      headers: {
+          'Authorization': `Bearer ${apiKey}`
+      }
+  }).pipe(res).on('error', (err) => {
+      console.error('Error:', err);
+      res.status(500).send('Internal Server Error');
+  });
+});
 // const randomKey = crypto.randomBytes(32).toString('hex');
 
 // app.use(session({
@@ -48,7 +67,7 @@ app.post('/ApiAfficheurdynimac/save-html', (req, res) => {
   const fileName = `exported_page_${fileNumber}.html`;
   const fullHtml = `
   <!DOCTYPE html>
-  <html lang="fr">
+  <html lang="en">
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,10 +82,17 @@ app.post('/ApiAfficheurdynimac/save-html', (req, res) => {
   </body>
   </html>`;
 
-  const filePath = path.join(__dirname, 'public', 'project', fileName);
+  const dirPath = path.join(__dirname, 'public', 'project');
+  const filePath = path.join(dirPath, fileName);
+
+  // Ensure the directory exists
+  if (!fs.existsSync(dirPath)) {
+      fs.mkdirSync(dirPath, { recursive: true });
+  }
 
   fs.writeFile(filePath, fullHtml, (err) => {
       if (err) {
+          console.error('Error saving file:', err); // Log the error details
           return res.status(500).send('Error saving file');
       }
       res.json({ url: `/project/${fileName}` });
@@ -252,8 +278,8 @@ app.get('/ApiAfficheurdynimac/getToken', (req, res) => {
 // Middleware to parse form data
 app.use(express.urlencoded({ extended: true }));
 // Connect to MongoDB
-const mongoUrl = 'mongodb://fluent-mongo:27017/';
-// const mongoUrl = 'mongodb://neos50.novatice.fr:27017/';
+// const mongoUrl = 'mongodb://fluent-mongo:27017/';
+const mongoUrl = 'mongodb://neos50.novatice.fr:27017/';
 const dbName = 'sensors';
 
 // Connect to MongoDB using Mongoose
